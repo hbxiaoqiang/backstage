@@ -3,7 +3,7 @@ import './static/font/iconfont.css';
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-     html, body, div, span, applet, object,
+    html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym,
 address, big, cite, code, del, dfn,
@@ -29,4 +29,5 @@ mark, audio, video {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 `

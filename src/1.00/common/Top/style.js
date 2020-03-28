@@ -8,7 +8,7 @@ export const Top = styled.div`
     line-height:${barHeight}rem;
     color:#fff;
     background-color:#4ad858;
-    ${abs};
+    position:fixed;
     top:0;
     left:0;
     z-index:99;
