@@ -11,49 +11,49 @@ const parame =(url,data)=>{
     })
     return config.serverIp+ 'api/' + url+ str;
 }
-export default {
-    firstOrDefault:(data)=>{
-        return parame('User/FirstOrDefault',data);
-    },
-    signature:(data)=>{
-        return parame('wechat/Signature',data);
-    },
-    user_Count:(data)=>{
-        return parame('User/Count',data);
-    },
-    user_List:(data)=>{
-        return parame('User/List',data);
-    },
-    user_Giving:(data)=>{
-        return parame('User/Giving',data);
-    },
-    user_BigSta:(data)=>{
-        return parame('User/BigSta',data);
-    },
-    user_UserSta:(data)=>{
-        return parame('User/UserSta',data);
-    },
-    user_Login:(data)=>{
-        return parame("User/Login",data);
-    },
-    
-    recordCost_PagedList:(data)=>{
-        return parame('RecordCost/PagedList',data);
-    },
 
-    message_PagedList:(data)=>{
-        return parame('Message/PagedList',data);
-    },
+export const firstOrDefault = (data)=>{
+    return parame('User/FirstOrDefault',data);
+}
+export const signature = (data)=>{
+    return parame('wechat/Signature',data);
+}
 
-    order_PagedList:(data)=>{
-        return parame('Order/PagedList',data);
-    },
+export const user_Count =(data)=>{
+    return parame('User/Count',data);
+}
+export const user_List =(data)=>{
+    return parame('User/List',data);
+}
+export const user_Giving =(data)=>{
+    return parame('User/Giving',data);
+}
+export const user_BigSta =(data)=>{
+    return parame('User/BigSta',data);
+}
+export const user_UserSta =(data)=>{
+    return parame('User/UserSta',data);
+}
+export const user_Login =(data)=>{
+    return parame("User/Login",data);
+}
 
-    order_Statistics:(data)=>{
-        return parame('Order/Statistics',data);
-    },
+export const recordCost_PagedList =(data)=>{
+    return parame('RecordCost/PagedList',data);
+}
 
-    recordDetails_List:(data)=>{
-        return parame('RecordDetails/List',data);
-    }
+export const message_PagedList =(data)=>{
+    return parame('Message/PagedList',data);
+}
+
+export const order_PagedList =(data)=>{
+    return parame('Order/PagedList',data);
+}
+
+export const order_Statistics =(data)=>{
+    return parame('Order/Statistics',data);
+}
+
+export const recordDetails_List =(data)=>{
+    return parame('RecordDetails/List',data);
 }

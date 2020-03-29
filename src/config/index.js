@@ -1,4 +1,4 @@
-export const config={
+export default {
     parnterId:3,
     serverIp:'http://www.7uao.com/',
     wxAppid: "wxc0c60e07a4916091",

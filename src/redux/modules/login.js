@@ -1,3 +1,7 @@
+import { jsonp as Jsonp } from '../../until/jsonpHelper';
+import {user_Login} from '../../until/url';
+import { types as appTypes } from '../../redux/modules/app';
+//18224242464
 const initState={
     userName:'',
     passWord:'',
@@ -35,10 +39,43 @@ export const actions={
                 type:types.LOGIN_FAILURE,
                 tipInfo:'密码必须填写'
             })
+
+            dispatch({
+                type:types.LOGIN_RES
+            })
+            requsetLogin(dispatch,userName,passWord)
         }
     },
     clearTip:()=>({
         type:types.LOGIN_CLEAR_TIP,
+    })
+}
+
+const requsetLogin=(dispatch,userName,passWord)=>{
+    const data = {
+        userName,
+        passWord
+    }
+    Jsonp(user_Login(data)).then(function(json){
+        const { Code , Data } = json;
+        if(Code !== 0){
+            dispatch({
+                type:types.LOGIN_FAILURE,
+                tipInfo:Data
+            })
+        }else{
+            dispatch({
+                type:types.LOGIN_SUCCESS,
+            })
+            dispatch({
+                types:appTypes.APP_USERINFO
+            })
+        }
+    },function(ex){
+        dispatch({
+            type:types.LOGIN_FAILURE,
+            tipInfo:ex
+        })
     })
 }
 
@@ -56,8 +93,12 @@ export const getTipInfo = (state)=>{
 
 const reducer = (state=initState ,action)=>{
     switch(action.type){
+        case types.LOGIN_RES:
+            return {...state, isRequset:true}
+        case types.LOGIN_SUCCESS:
+            return {...state, isRequset:false}
         case types.LOGIN_FAILURE:
-            return {...state,tipInfo:action.tipInfo}
+            return {...state,tipInfo:action.tipInfo,isRequset:false}
         case types.LOGIN_CLEAR_TIP:
             return {...state,tipInfo:''}
         case types.LOGIN_USERNAME:
