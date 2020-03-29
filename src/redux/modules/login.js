@@ -60,6 +60,10 @@ const reducer = (state=initState ,action)=>{
             return {...state,tipInfo:action.tipInfo}
         case types.LOGIN_CLEAR_TIP:
             return {...state,tipInfo:''}
+        case types.LOGIN_USERNAME:
+            return {...state,userName:action.userName}
+        case types.LOGIN_PASSWORD:
+            return {...state, passWord:action.passWord}
         default:
             return state;
     }

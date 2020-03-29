@@ -22,7 +22,8 @@ class Login extends Component{
                                 <Label>账号</Label>
                             </CellHeader>
                             <CellBody>
-                                <Input type="text" placeholder="请输入账号"/>
+                                <Input type="text" value={this.props.userName}
+                                 onChange={this.handleUserName} placeholder="请输入账号"/>
                             </CellBody>
                         </FormCell>
                         <FormCell>
@@ -30,7 +31,8 @@ class Login extends Component{
                                 <Label>密码</Label>
                             </CellHeader>
                             <CellBody>
-                                <Input type="password" placeholder="请输入密码"/>
+                                <Input type="password" value={this.props.passWord}
+                                onChange={this.handlePassWord} placeholder="请输入密码"/>
                             </CellBody>
                         </FormCell>
                     </Form>
@@ -53,6 +55,14 @@ class Login extends Component{
             }
             </>
         )
+    }
+
+    handleUserName=(e)=>{
+        this.props.loginActions.inputUserName(e.target.value);
+    }
+
+    handlePassWord=(e)=>{
+        this.props.loginActions.inputPassWord(e.target.value);
     }
 
     submit=()=>{
