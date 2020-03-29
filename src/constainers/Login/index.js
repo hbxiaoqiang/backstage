@@ -4,10 +4,16 @@ import { Page } from './style';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { actions as loginActions, getUserName, getPassWord, getTipInfo } from '../../redux/modules/login';
-
+import { getUserInfo } from '../../redux/modules/app'
+import { Redirect } from 'react-router-dom';
 
 class Login extends Component{
     render(){
+        if(this.props.userInfo.UserName){
+            return (
+                <Redirect to='/home' />
+            )
+        }
         return (
             <>
             <Page>
@@ -73,7 +79,8 @@ class Login extends Component{
 const mapStateToProps= (state,props)=>({
     userName:getUserName(state),
     passWord:getPassWord(state),
-    tipInfo:getTipInfo(state)
+    tipInfo:getTipInfo(state),
+    userInfo:getUserInfo(state)
 })
 
 const mapDispatchToProps = (dispatch) => ({

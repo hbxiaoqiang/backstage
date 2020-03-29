@@ -11,6 +11,10 @@ export const actions = {
 
 }
 
+export const getUserInfo=(state)=>{
+    return state.app.userInfo
+}
+
 const userInfo = (state = initState.userInfo, action) =>{
     switch(action.type){
         case types.APP_USERINFO:

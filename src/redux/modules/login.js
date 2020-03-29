@@ -57,24 +57,17 @@ const requsetLogin=(dispatch,userName,passWord)=>{
         passWord
     }
     Jsonp(user_Login(data)).then(function(json){
-        const { Code , Data } = json;
-        if(Code !== 0){
-            dispatch({
-                type:types.LOGIN_FAILURE,
-                tipInfo:Data
-            })
-        }else{
-            dispatch({
-                type:types.LOGIN_SUCCESS,
-            })
-            dispatch({
-                types:appTypes.APP_USERINFO
-            })
-        }
-    },function(ex){
+        dispatch({
+            type:types.LOGIN_SUCCESS,
+        })
+        dispatch({
+            type:appTypes.APP_USERINFO,
+            userInfo:json
+        })
+    },function(err){
         dispatch({
             type:types.LOGIN_FAILURE,
-            tipInfo:ex
+            tipInfo:err
         })
     })
 }

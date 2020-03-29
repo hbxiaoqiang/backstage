@@ -6,7 +6,13 @@ import { BrowserRouter,Switch,Route } from 'react-router-dom'
 class App extends Component{
     render(){
         return <>
-            <Login />
+        <BrowserRouter>
+        <Switch>
+            <Route exact path='/' component={Login}/>
+            <Route path='/home' component={Home} />
+        </Switch>
+        </BrowserRouter>
+           
         </>
     }
 }

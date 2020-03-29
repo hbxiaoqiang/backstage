@@ -1,11 +1,21 @@
-import React , { Components } from 'react';
+import React , { Component } from 'react';
+import { connect } from 'react-redux';
+import { getUserInfo } from '../../redux/modules/app'
 
-class Home extends Components{
+class Home extends Component{
     render(){
         return (
-            <div>#######这是首页</div>
+            <div>#######这是首页
+                {
+                    JSON.stringify(this.props.userInfo)
+                }
+            </div>
         )
     }
 }
 
-export default Home;
+const mapStateToProps=(state)=>({
+    userInfo:getUserInfo(state)
+})
+
+export default connect(mapStateToProps,null)(Home);
