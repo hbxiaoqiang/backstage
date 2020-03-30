@@ -1,6 +1,9 @@
 import { combineReducers } from 'redux';
+import { storage } from '../../until/tools';
 const initState = {
-    userInfo:{}
+    userInfo:{
+        UserName:storage.get('userName')
+    }
 }
 
 export const types = {
@@ -18,6 +21,7 @@ export const getUserInfo=(state)=>{
 const userInfo = (state = initState.userInfo, action) =>{
     switch(action.type){
         case types.APP_USERINFO:
+            if(!state.UserName) storage.set('userName',action.userInfo.UserName);
             return {...state,...action.userInfo}
         default:
             return state

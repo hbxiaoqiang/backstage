@@ -6,7 +6,11 @@ export const jsonp=(url)=>{
         return response.json()
     }).then(function(res){
         if(!res.Code){
-            return Promise.resolve(res.Data.Data);
+            if(res.Data.Data){
+                return Promise.resolve(res.Data.Data);
+            }else{
+                return Promise.resolve(res.Data);
+            }
         }else{
             return Promise.reject(res.Data)
         }
