@@ -1,19 +1,16 @@
-import { jsonp as Jsonp } from '../../until/jsonpHelper';
 import {user_Login} from '../../until/url';
 import { types as appTypes } from '../../redux/modules/app';
+import { JSONP_REQ } from '../middleware/api';
 //18224242464
 const initState={
     userName:'',
     passWord:'',
-    status:false,
-    isRequset:false,
     tipInfo:''
 }
 
 export const types={
     LOGIN_USERNAME:'LOGIN/USERNAME',
     LOGIN_PASSWORD:'LOGIN/USERWORD',
-    LOGIN_RES:'LOGIN/RES',
     LOGIN_SUCCESS:'LOGIN/SUCCESS',
     LOGIN_FAILURE:'LOGIN/FAILURE',
     LOGIN_CLEAR_TIP:'LOGIN/CLEAR/TIP'
@@ -33,17 +30,17 @@ export const actions={
             const { userName, passWord } = getState().login;
             if(userName === '') return dispatch({
                 type:types.LOGIN_FAILURE,
-                tipInfo:'用户名必须填写'
+                msg:'用户名必须填写'
             })
             if(passWord === '') return dispatch({
                 type:types.LOGIN_FAILURE,
-                tipInfo:'密码必须填写'
+                msg:'密码必须填写'
             })
-
-            dispatch({
-                type:types.LOGIN_RES
+            const url = user_Login({
+                userName,
+                passWord
             })
-            requsetLogin(dispatch,userName,passWord)
+            dispatch(requsetLogin(url))
         }
     },
     clearTip:()=>({
@@ -51,26 +48,18 @@ export const actions={
     })
 }
 
-const requsetLogin=(dispatch,userName,passWord)=>{
-    const data = {
-        userName,
-        passWord
+const requsetLogin=(url)=>({
+    [JSONP_REQ]:{
+        types:[
+            appTypes.APP_LOADING,
+            appTypes.APP_FIRSTORDEFAUL_SUCCESS,
+            //types.LOGIN_FAILURE
+            appTypes.APP_TOP_TIPS
+        ],
+        api:url,
+        tipAutoCancel:false
     }
-    Jsonp(user_Login(data)).then(function(json){
-        dispatch({
-            type:types.LOGIN_SUCCESS,
-        })
-        dispatch({
-            type:appTypes.APP_USERINFO,
-            userInfo:json
-        })
-    },function(err){
-        dispatch({
-            type:types.LOGIN_FAILURE,
-            tipInfo:err
-        })
-    })
-}
+})
 
 export const getUserName = (state)=>{
     return state.login.userName;
@@ -86,12 +75,8 @@ export const getTipInfo = (state)=>{
 
 const reducer = (state=initState ,action)=>{
     switch(action.type){
-        case types.LOGIN_RES:
-            return {...state, isRequset:true}
-        case types.LOGIN_SUCCESS:
-            return {...state, isRequset:false}
         case types.LOGIN_FAILURE:
-            return {...state,tipInfo:action.tipInfo,isRequset:false}
+            return {...state,tipInfo:action.msg}
         case types.LOGIN_CLEAR_TIP:
             return {...state,tipInfo:''}
         case types.LOGIN_USERNAME:

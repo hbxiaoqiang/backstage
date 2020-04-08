@@ -14,5 +14,12 @@ export const jsonp=(url)=>{
         }else{
             return Promise.reject(res.Data)
         }
+    },function(error){
+        if(typeof error === 'string'){
+            return Promise.reject(error)
+        }
+        else{
+            return Promise.reject('请求失败，请检查!')
+        }
     })
 }

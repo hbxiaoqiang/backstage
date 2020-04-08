@@ -4,6 +4,7 @@ import hall from './hall';
 import home from './home';
 import order from './order';
 import login from './login';
+import players from './players';
 //import entities from './entities';
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
     hall,
     home,
     order,
-    login
+    login,
+    players
 })
 
 export default rootReducer;

@@ -2,6 +2,9 @@ import config from '../config';
 
 const parame =(url,data)=>{
     let str = '?'
+    if(!url.includes('User/Login')){
+        str += 'partnerId=' + config.partnerId + '&';
+    }
     Object.entries(data).forEach(function(value,index,arr){
         if(index === (arr.length-1)){
             str +=value[0] +'=' + value[1]; 

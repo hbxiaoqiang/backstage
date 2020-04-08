@@ -1,7 +1,8 @@
 export default {
-    parnterId:3,
+    partnerId:9,
     serverIp:'http://www.7uao.com/',
     wxAppid: "wxc0c60e07a4916091",
+    imgPath:"upload/headimg/",
     userTypeName: {
         10: "技术员",
         11: "管理员",
@@ -41,5 +42,104 @@ export default {
         6: [1, 2, 8,9],
         7: [1, 2, 8,10],
         8:[2,8]
+    },
+    gameName:{
+        '3':'浦江麻将'
+    },
+    appName:{
+        "9":"浦江棋牌"
+    }
+}
+
+export const program = {
+    '1':{
+        name:'玩家',
+        ico:'iconfont icon-wanjia',
+        href:'/player',
+        permise:[10,11,15]
+    },
+    '2':{
+        name:'房卡',
+        ico:'iconfont icon-fangqia',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '3':{
+        name:'编辑公告',
+        ico:'iconfont icon-nichengxiugai',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '4':{
+        name:'公会',
+        ico:'iconfont icon-gongneng',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '5':{
+        name:'申请提现',
+        ico:'iconfont icon-tixian',
+        href:'#!',
+        permise:[12,13]
+    },
+    '6':{
+        name:'提现审批',
+        ico:'iconfont icon-shenpi',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '7':{
+        name:'提现记录',
+        ico:'iconfont icon-hongbao',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '8':{
+        name:'充值记录',
+        ico:'iconfont icon-chongzhi',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '9':{
+        name:'充值提成',
+        ico:'iconfont icon-chongzhi',
+        href:'#!',
+        permise:[12,13]
+    },
+    '10':{
+        name:'汇总',
+        ico:'iconfont icon-qianbao',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '11':{
+        name:'绑定账号',
+        ico:'iconfont icon-gaiming',
+        href:'#!',
+        permise:[10,11,15]
+    },
+    '12':{
+        name:'修改密码',
+        ico:'iconfont icon-mima1',
+        href:'#!',
+        permise:[10,11,15]
+    },
+}
+
+export const footerNav = {
+    '1':{
+        name:'首页',
+        ico:'iconfont icon-shouye1',
+        href:'/home',
+    },
+    '2':{
+        name:'游戏统计',
+        ico:'iconfont icon-tongji2',
+        href:'/hall',
+    },
+    '3':{
+        name:'充值统计',
+        ico:'iconfont icon-qianbao',
+        href:'/order',
     }
 }

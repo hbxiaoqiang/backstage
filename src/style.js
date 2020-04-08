@@ -23,7 +23,9 @@ mark, audio, video {
     vertical-align: baseline;
     font: inherit;
 }
-
+html,body{
+    background: #efefef;
+}
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
