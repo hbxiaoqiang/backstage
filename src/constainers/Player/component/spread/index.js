@@ -18,7 +18,7 @@ export default class Spread extends Component {
                     <Form>
                         <FormCell>
                             <CellHeader>
-                                归属人ID
+                                归属人ID：
                         </CellHeader>
                             <CellBody>
                                 <Input type='number'
@@ -46,6 +46,7 @@ export default class Spread extends Component {
     }
 
     sureHandle = ()=>{
+        if(this.state.value === '') return;
         this.props.sure(this.state.value);
     }
 

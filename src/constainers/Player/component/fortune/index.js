@@ -34,17 +34,19 @@ export default class Fortune extends Component{
     }
 
     changeHandle = (e)=>{
-        this.setState((prev)=>({
+        this.setState({
             value:e.target.value
-        }))
+        })
     }
 
     cancelAction = ()=>{
         this.props.cancelFn(null);
+        this.close()
     }
 
     sureAction = () =>{
         this.props.sureFn(this.state.value);
+        this.close()
     }
 
     close = ()=>{

@@ -57,7 +57,8 @@ const requsetLogin=(url)=>({
             appTypes.APP_TOP_TIPS
         ],
         api:url,
-        tipAutoCancel:false
+        tipAutoCancel:false,
+        isLogin:true
     }
 })
 

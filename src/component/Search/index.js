@@ -32,7 +32,7 @@ export default class Search extends Component {
             value:value
         }))
         if(value === ''){
-            this.props.onSubmit();
+            this.props.onSubmit(value);
         }
     }
 

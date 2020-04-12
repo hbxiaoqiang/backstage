@@ -1,12 +1,12 @@
 import fetchJsonp from 'fetch-jsonp';
 
-export const jsonp=(url)=>{
+export const jsonp=(url,isLogin)=>{
     return fetchJsonp(url)
     .then(function(response) {
         return response.json()
     }).then(function(res){
         if(!res.Code){
-            if(res.Data.Data){
+            if(isLogin){
                 return Promise.resolve(res.Data.Data);
             }else{
                 return Promise.resolve(res.Data);

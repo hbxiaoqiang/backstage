@@ -3,6 +3,15 @@ export default {
     serverIp:'http://www.7uao.com/',
     wxAppid: "wxc0c60e07a4916091",
     imgPath:"upload/headimg/",
+    userType: {
+        Programer: 10,//技术员
+        Admin: 11,//管理员
+        Partner: 12,//合作伙伴
+        Manager: 13,//代理
+        Gamer: 14,
+        Tester: 15,
+        Robot: 16,
+    },
     userTypeName: {
         10: "技术员",
         11: "管理员",

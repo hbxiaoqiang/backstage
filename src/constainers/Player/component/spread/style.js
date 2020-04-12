@@ -10,5 +10,6 @@ export const SpreadStyle = styled.div`
         left:50%;
         margin-left:-45%;
         top:40px;
+        z-index:999
     }
 `;

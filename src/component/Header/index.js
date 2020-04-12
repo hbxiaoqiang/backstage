@@ -12,7 +12,7 @@ class Header extends Component {
                 <p>{this.props.title}</p>
                 {
                     this.props.otherBtn?
-                    <span className="other-btn">{
+                    <span onClick={this.props.otherHandle} className="other-btn">{
                         this.props.otherBtn
                     }</span>:null
                 }

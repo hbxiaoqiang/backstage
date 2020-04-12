@@ -8,22 +8,22 @@ export default class List extends Component {
             <ListStyle>
                 <Flex>
                     <div className='img'>
-                        <img src='' alt='' />
+                        <img src={ this.props.imgUrl } alt='' />
                     </div>
                     <FlexItem>
                         <Flex>
                             <FlexItem>
-                                <span className='registDate'>
+                                <div className='registDate'>
                                     注册时间:
                                     {this.props.registDate}
-                                </span>
+                                </div>
                             </FlexItem>
                             <FlexItem>
-                                <span className='textRt blue'>
+                                <div className='textRt blue'>
                                     {
                                         this.props.typeName
                                     }
-                                </span>
+                                </div>
                             </FlexItem>
                         </Flex>
                         <div className='nickName'>
@@ -38,20 +38,20 @@ export default class List extends Component {
                         </div>
                         <Flex>
                             <FlexItem>
-                                <span className='fkcost'>
+                                <div className='fkcost'>
                                     房卡：{
                                         this.props.fangka
                                     }
-                                </span>
+                                </div>
                             </FlexItem>
                             <FlexItem>
-                                <span className='textRt'>
+                                <div className='textRt'>
                                     {
-                                        `${this.props.fandian ? ('返点：' + this.props.fandian) : ''}
+                                        `${this.props.fandian===-1 ?'' : ('返点：' + this.props.fandian) }
                                          积分：${this.props.jifen}
                                         `
                                     }
-                                </span>
+                                </div>
                             </FlexItem>
                         </Flex>
                         <div className='lastDate'>
@@ -59,21 +59,19 @@ export default class List extends Component {
                         </div>
                         <Flex>
                             <FlexItem>
-                                <div onClick={null} className='fortune textCt blue'>
+                                <div onClick={this.props.eidtFortune} className='fortune textCt blue'>
                                     {
                                         this.props.fortune
                                     }
                                 </div>
                             </FlexItem>
                             <FlexItem>
-                                <div onClick={null} className='status textCt blue'>
-                                    {
-                                        this.props.status
-                                    }
+                                <div onClick={this.props.delete} className='status textCt blue'>
+                                    拉黑
                                 </div>
                             </FlexItem>
                             <FlexItem>
-                                <div onClick={null} className='textCt blue'>
+                                <div onClick={ this.props.eidtSpread } className='textCt blue'>
                                     归属
                                 </div>
                             </FlexItem>

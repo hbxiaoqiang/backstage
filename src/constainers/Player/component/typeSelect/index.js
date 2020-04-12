@@ -33,12 +33,14 @@ export default class TypeSelect extends Component{
             show = { this.props.show }
             menus = { this.state.menus }
             actions={ this.state.actions }
+            onRequestClose={this.closeHandle}
             />
         )
     }
 
     menuClickHandle = (typeId)=>{
         this.props.requsetData(typeId)
+        this.closeHandle()
     }
 
     closeHandle = ()=>{

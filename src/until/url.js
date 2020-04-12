@@ -15,48 +15,61 @@ const parame =(url,data)=>{
     return config.serverIp+ 'api/' + url+ str;
 }
 
-export const firstOrDefault = (data)=>{
+export const firstOrDefault = data => {
     return parame('User/FirstOrDefault',data);
 }
-export const signature = (data)=>{
+export const signature = data => {
     return parame('wechat/Signature',data);
 }
 
-export const user_Count =(data)=>{
+export const user_Count = data => {
     return parame('User/Count',data);
 }
-export const user_List =(data)=>{
+export const user_List = data => {
     return parame('User/List',data);
 }
-export const user_Giving =(data)=>{
+
+export const user_UpdateFortune = data => {
+    return parame('User/UpdateFortune',data);
+}
+
+export const user_Delete = data => {
+    return parame('User/Delete',data);//userName: 15882661962 userId: 27
+}
+
+export const user_Giving = data => {
     return parame('User/Giving',data);
 }
-export const user_BigSta =(data)=>{
+export const user_BigSta = data => {
     return parame('User/BigSta',data);
 }
-export const user_UserSta =(data)=>{
+export const user_UserSta = data => {
     return parame('User/UserSta',data);
 }
-export const user_Login =(data)=>{
+export const user_Login = data => {
     return parame("User/Login",data);
 }
 
-export const recordCost_PagedList =(data)=>{
+export const user_UpdateSpreadId = data => {
+    return parame('User/UpdateSpreadId',data);
+}
+
+export const recordCost_PagedList = data => {
     return parame('RecordCost/PagedList',data);
 }
 
-export const message_PagedList =(data)=>{
+export const message_PagedList = data => {
     return parame('Message/PagedList',data);
 }
 
-export const order_PagedList =(data)=>{
+export const order_PagedList = data => {
     return parame('Order/PagedList',data);
 }
 
-export const order_Statistics =(data)=>{
+export const order_Statistics = data => {
     return parame('Order/Statistics',data);
 }
 
-export const recordDetails_List =(data)=>{
+export const recordDetails_List = data => {
     return parame('RecordDetails/List',data);
 }

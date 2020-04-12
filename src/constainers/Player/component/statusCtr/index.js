@@ -19,7 +19,7 @@ export default class statusCtr extends Component {
                         onClick: ()=>{this.props.sureFn(this.props.id)}
                     }
                 ]}
-                show={this.props.show}>
+                show={true}>
                     {`ID:${this.props.id} 确认要${this.props.tip}`}
             </Dialog>
         )

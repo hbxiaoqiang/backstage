@@ -5,9 +5,10 @@ export const FortuneStyle = styled.div`
     .fortune-content{
         position:fixed;
         top:50%;
-        left:0;
+        left:50%;
         right:0;
         width:80%;
+        margin-left: -40%;
         height:245px;
         margin-top:-122.5px;
         z-index: 1001;
@@ -29,6 +30,7 @@ export const FortuneStyle = styled.div`
         p{
             font-size: 12px;
             margin-top: 10px;
+            text-align:center;
         }
         button{
             width: 40%;
