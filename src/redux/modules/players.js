@@ -91,12 +91,13 @@ export const actions = {
         }
     },
 
-    userCount: () => {
+    userCount: ( obj = {} ) => {
         return (dispatch, getState) => {
             const { app: { userInfo } } = getState();
             const url = user_Count({
                 userName: userInfo.UserName,
                 userId: userInfo.UserId,
+                ...obj
             })
             dispatch(backUserCount(url));
 

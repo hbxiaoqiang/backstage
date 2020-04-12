@@ -1,17 +1,16 @@
 import React , { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import Header from '../../component/Header';
-import Footer from '../../component/Footer';
-import DateTab from '../../component/DateTab';
-import DateSelect from '../../component/DateSelect';
-import LineTit from '../../component/LineTit';
+import Header from '../../../component/Header';
+import DateTab from '../../../component/DateTab';
+import DateSelect from '../../../component/DateSelect';
+import LineTit from '../../../component/LineTit';
 import TotalCount from './componet/totalCount';
 import CountList from './componet/countList';
 import { OrderStyle } from './style';
-import { dateTxt } from '../../until/tools';
+import { dateTxt } from '../../../until/tools';
 import { actions as orderActions, getTotalData,getDateTimer,
-    getRecords,getDiyTime } from '../../redux/modules/order';
+    getRecords,getDiyTime } from '../../../redux/modules/order';
 class Order extends Component{
     render(){
         const { orderActions:{statistics,diyTime},diy,
@@ -40,7 +39,6 @@ class Order extends Component{
             <CountList 
             counts={records}
             />
-            <Footer index="2" />
             </OrderStyle>
         )
     }

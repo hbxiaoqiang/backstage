@@ -12,6 +12,8 @@ import Fortune from './component/fortune';
 import Spread from './component/spread';
 import StatusCtr from './component/statusCtr';
 import TypeSelect from './component/typeSelect';
+import { withUrlParam } from '../../until/tools';
+
 
 let param = {
 }
@@ -99,16 +101,22 @@ class Player extends Component {
     }
 
     componentDidMount() {
+        let sd = null, ed = null;
+        let seachParam = withUrlParam(this.props.location.search);
+        if(seachParam&&seachParam.sd){
+            sd = seachParam.sd+'T00:00:00';
+            ed = seachParam.ed+'T23:59:59';
+        }
         Object.assign(param,{
             page: 0,
             size: 10,
             seachName: '',
-            sd: null,
-            ed: null,
+            sd: sd,
+            ed: ed,
             typeId: null,
             fPlayer: false
         })
-        this.props.playersActions.userCount();
+        
         this.requestUserList();
         window.addEventListener('scroll', this.loadMoreEvent);
     }
@@ -153,6 +161,9 @@ class Player extends Component {
             }
             if (param.fPlayer) {
                 obj.fPlayer = param.fPlayer
+            }
+            if(param.page === 1){
+                this.props.playersActions.userCount(obj);
             }
             this.props.playersActions.playerList(obj);
         }

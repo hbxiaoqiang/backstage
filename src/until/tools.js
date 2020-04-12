@@ -206,3 +206,18 @@ export const dateTxt = (st, ed) => {
     }
     return name;
 }
+
+export const withUrlParam = str => {
+    if(!str) return false;
+    if(str.indexOf('?') === 0){
+        const newArr = str.replace('?','').split('&');
+        let  newObj = {};
+        newArr.forEach(function(value){
+            let param = value.split('=');
+            newObj[param[0]] = param[1]
+        })
+        return newObj
+    }else{
+        throw new Error('查询第一个必须为?');
+    }
+}

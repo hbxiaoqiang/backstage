@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ProgramDiv } from './style';
-import { program } from '../../../../config';
+import { program } from '../../../../../config';
 import { Link } from 'react-router-dom';
 
 class Program extends Component {

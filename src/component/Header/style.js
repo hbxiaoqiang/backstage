@@ -25,23 +25,26 @@ export const HeaderStyle = styled.div`
         left:0;
         display:inline-block;
         height:${barHeight}rem;
+        cursor:pointer;
         ${abs};
-    }
+        :active{
+            background:rgba(255,255,255,0.3)
+        }
+        :after {
+            content:"";
+            display:inline-block;
+            height:${12 / 16}rem;
+            width:${12 / 16}rem;
+            border-width:0 0 3px 3px;
+            border-style:solid;
+            transform:matrix(0.71,0.71,-0.71,0.71,0,0);
+            top:50%;
+            margin-top:${-6 / 16}rem;
+            left:${11 / 16}rem;
+            ${abs};
+        }
 
-    .back-top:after{
-        content:"";
-        display:inline-block;
-        height:${12 / 16}rem;
-        width:${12 / 16}rem;
-        border-width:0 0 3px 3px;
-        border-style:solid;
-        transform:matrix(0.71,0.71,-0.71,0.71,0,0);
-        top:50%;
-        margin-top:${-6 / 16}rem;
-        left:${11 / 16}rem;
-        ${abs};
     }
-
     .other-btn {
         padding-left: ${20 / 16}rem;
         padding-right: ${30 / 16}rem;
@@ -49,7 +52,11 @@ export const HeaderStyle = styled.div`
         right: 0;
         display:inline-block;
         height:${barHeight}rem;
+        cursor:pointer;
         ${abs};
+        :active{
+            background:rgba(255,255,255,0.3)
+        }
         :after{
             content: " ";
             display: inline-block;

@@ -23,6 +23,9 @@ mark, audio, video {
     vertical-align: baseline;
     font: inherit;
 }
+html{
+    overflow-x:hidden;
+}
 html,body{
     background: #efefef;
 }
@@ -30,5 +33,41 @@ html,body{
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+.forward-enter {
+  transform: translateX(100%);
+}
+
+.forward-enter-active {
+  transform: translateX(0);
+  transition: transform 500ms;
+}
+
+.forward-exit {
+  transform: translateX(0);
+}
+
+.forward-exit-active {
+  transform: translateX(-100%);
+  transition: transform 500ms;
+}
+
+.back-enter {
+  transform: translateX(-100%);
+}
+
+.back-enter-active {
+  transform: translateX(0);
+  transition: transform 500ms;
+}
+
+.back-exit {
+  transform: translateX(0);
+}
+
+.back-exit-active {
+  transform: translate(100%);
+  transition: transform 500ms;
 }
 `

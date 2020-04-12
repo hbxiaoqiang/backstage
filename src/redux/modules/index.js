@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 import app from './app';
-import hall from './hall';
+import count from './count';
 import home from './home';
+import hall from './hall';
 import order from './order';
 import login from './login';
 import players from './players';
@@ -9,8 +10,9 @@ import players from './players';
 
 const rootReducer = combineReducers({
     app,
-    hall,
+    count,
     home,
+    hall,
     order,
     login,
     players

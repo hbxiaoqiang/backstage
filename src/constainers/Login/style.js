@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Page = styled.div`
+position:absolute;
+    top:0;
+    width:100%;
     .page__hd {
         padding: 20px;
         background-color: #f8f8f8;

@@ -1,7 +1,7 @@
 import React ,{ Component } from 'react';
 import { CountListStyle } from './style';
 import List from './list';
-import config from '../../../../config';
+import config from '../../../../../config';
 
 const headImgPath = id => {
     return config.serverIp + config.imgPath + id + '.jpg';

@@ -7,7 +7,7 @@ class TotalCount extends Component {
         return (
             <TotalCountStyle>
                 <Flex>
-                    <FlexItem>
+                    <FlexItem onClick={this.props.goToPlayers}>
                         <i className='num'>
                             {this.props.register}
                         </i>

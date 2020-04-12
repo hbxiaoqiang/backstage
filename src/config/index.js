@@ -138,17 +138,17 @@ export const program = {
 export const footerNav = {
     '1':{
         name:'首页',
+        page:'hall',
         ico:'iconfont icon-shouye1',
-        href:'/home',
     },
     '2':{
         name:'游戏统计',
+        page:'count',
         ico:'iconfont icon-tongji2',
-        href:'/hall',
     },
     '3':{
         name:'充值统计',
+        page:'order',
         ico:'iconfont icon-qianbao',
-        href:'/order',
     }
 }
