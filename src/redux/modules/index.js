@@ -6,6 +6,7 @@ import hall from './hall';
 import order from './order';
 import login from './login';
 import players from './players';
+import gold from './gold';
 //import entities from './entities';
 
 const rootReducer = combineReducers({
@@ -15,7 +16,8 @@ const rootReducer = combineReducers({
     hall,
     order,
     login,
-    players
+    players,
+    gold
 })
 
 export default rootReducer;

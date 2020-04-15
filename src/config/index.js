@@ -70,7 +70,7 @@ export const program = {
     '2':{
         name:'房卡',
         ico:'iconfont icon-fangqia',
-        href:'#!',
+        href:'/gold',
         permise:[10,11,15]
     },
     '3':{

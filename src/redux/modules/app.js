@@ -9,7 +9,12 @@ const initState = {
     },
     common:{
         loading:false,
-        topTips:''
+        topTips:'',
+        alert:'',
+        confirm:{
+            sureCall:'',
+            tip:'',
+        }
     }
 
 }
@@ -21,6 +26,8 @@ export const types = {
     //loading types;
     APP_LOADING:'APP_LOADING',
     APP_TOP_TIPS:'APP_TOP_TIPS',
+    APP_ALERT:'APP_ALERT',
+    APP_CONFIRM:'APP_CONFIRM'
 }
 
 export const actions = {
@@ -40,6 +47,14 @@ export const actions = {
     }),
     clearTopTips:()=>({
         type:types.APP_TOP_TIPS,
+        msg:''
+    }),
+    clearAlert:()=>({
+        type:types.APP_ALERT,
+        msg:''
+    }),
+    clearConfirm:()=>({
+        type:types.APP_CONFIRM,
         msg:''
     })
 }
@@ -83,6 +98,14 @@ const common = (state=initState.common, action) => {
             return {...state,loading:action.request}
         case types.APP_TOP_TIPS:
             return {...state,topTips:action.msg}
+        case types.APP_ALERT:
+            return {...state, alert:action.msg}
+        case types.APP_CONFIRM:
+            if(!action.msg){
+                return {...state, confirm:{sureCall:'',tip:action.msg}}
+            }else{
+                return {...state, confirm:{sureCall:action.sureCall,tip:action.msg}}
+            }
         default:
             return state;
     }

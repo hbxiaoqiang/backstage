@@ -37,7 +37,7 @@ export default store => next => action=> {
         return next(action);
     }
     const {types,api,tipAutoCancel,otherData,isLogin,depth} = callReq;
-    if(!Array.isArray(types) && types.length !== 3){
+    if(!Array.isArray(types) || types.length !== 3){
         throw new Error(' types必须一个长度3的数组')
     }
     if(typeof api !== 'string'){
