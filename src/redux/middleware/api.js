@@ -14,7 +14,7 @@ JSONP_REQ:{
 
 */
 
-const withKeyValue = (data,key) => {
+export const withKeyValue = (data,key) => {
     if(!Array.isArray(data)){
         return data
     }else{

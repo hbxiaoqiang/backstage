@@ -7,6 +7,14 @@ import order from './order';
 import login from './login';
 import players from './players';
 import gold from './gold';
+import group from './group';
+import adminCash from './adminCash';
+import bindMobile from './bindMObile';
+import game from './game';
+import gather from './gather';
+import password from './password';
+import consume from './consume';
+
 //import entities from './entities';
 
 const rootReducer = combineReducers({
@@ -17,7 +25,14 @@ const rootReducer = combineReducers({
     order,
     login,
     players,
-    gold
+    gold,
+    group,
+    adminCash,
+    bindMobile,
+    game,
+    gather,
+    password,
+    consume
 })
 
 export default rootReducer;

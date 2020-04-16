@@ -250,16 +250,15 @@ const listData = (state = initState.listData, action) => {
         case types.PLAYERS_USER_LIST_RES:
             return {...state,loadmore:false}
         case types.PLAYERS_USER_LIST_SUCCESS:
-            if(action.data === null) action.data = {ids:[],data:{}}
+            if(action.data === null) return {...state, loadmore:true};
             if(action.otherData === 1){
                 return { ...state, ...action.data,loadmore:true };
             }else{
-                const newData = {
+                return {
                     ids:[...state.ids,...action.data.ids],
                     data:{...state.data,...action.data.data},
                     loadmore:true
                 }
-                return newData;
             }
         case types.PLAYERS_USER_UPDATEORTUNE_SUCCESS:
             {
@@ -277,7 +276,7 @@ const listData = (state = initState.listData, action) => {
                 return { ...state, ids }
             }
         case types.PLAYERS_CLEAR_DATA:
-            return { ...state, ...initState.listData }
+            return { ...initState.listData }
         default:
             return state;
     }

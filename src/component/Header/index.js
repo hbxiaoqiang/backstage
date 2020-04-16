@@ -5,13 +5,13 @@ class Header extends Component {
         return (
             <HeaderStyle>
                {
-                   this.props.backBtn?(
-                    <span onClick={this.props.backHandle} className="back-top">{this.props.backBtn}</span>
+                   this.props.backHandle?(
+                    <span onClick={this.props.backHandle} className="back-top">{ this.props.backBtn||'返回' }</span>
                    ):null
                }
                 <p>{this.props.title}</p>
                 {
-                    this.props.otherBtn?
+                    this.props.otherHandle?
                     <span onClick={this.props.otherHandle} className="other-btn">{
                         this.props.otherBtn
                     }</span>:null

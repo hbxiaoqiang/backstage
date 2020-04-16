@@ -44,6 +44,11 @@ export default {
         2: "已处理",
         3: "作废"
     },
+    cashText:{
+        1:"待处理",
+        2:'已拒绝',
+        3:'已提现'
+    },
     classify: {
         3: [1, 2, 3, 6, 8],
         4: [1, 2, 4, 8],
@@ -76,13 +81,13 @@ export const program = {
     '3':{
         name:'编辑公告',
         ico:'iconfont icon-nichengxiugai',
-        href:'#!',
+        href:'notice',
         permise:[10,11,15]
     },
     '4':{
         name:'公会',
         ico:'iconfont icon-gongneng',
-        href:'#!',
+        href:'group',
         permise:[10,11,15]
     },
     '5':{
@@ -94,19 +99,19 @@ export const program = {
     '6':{
         name:'提现审批',
         ico:'iconfont icon-shenpi',
-        href:'#!',
+        href:'/adminCash',
         permise:[10,11,15]
     },
     '7':{
         name:'提现记录',
         ico:'iconfont icon-hongbao',
-        href:'#!',
+        href:'/packet',
         permise:[10,11,15]
     },
     '8':{
         name:'充值记录',
         ico:'iconfont icon-chongzhi',
-        href:'#!',
+        href:'/consume/recharge',
         permise:[10,11,15]
     },
     '9':{
@@ -118,19 +123,19 @@ export const program = {
     '10':{
         name:'汇总',
         ico:'iconfont icon-qianbao',
-        href:'#!',
+        href:'/gather',
         permise:[10,11,15]
     },
     '11':{
         name:'绑定账号',
         ico:'iconfont icon-gaiming',
-        href:'#!',
+        href:'/bindMobile',
         permise:[10,11,15]
     },
     '12':{
         name:'修改密码',
         ico:'iconfont icon-mima1',
-        href:'#!',
+        href:'/password',
         permise:[10,11,15]
     },
 }

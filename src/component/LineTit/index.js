@@ -1,16 +1,14 @@
-import React ,{ Component } from 'react';
+import React from 'react';
 import { LineTit } from './style'
 
-class LineTitle extends Component {
-    render(){
-        return (
-            <LineTit>
-                {
-                    this.props.titleTxt
-                }
-            </LineTit>
-        )
-    }
+function LineTitle(props) {
+    return (
+        <LineTit>
+            {
+                props.titleTxt
+            }
+        </LineTit>
+    )
 }
 
 export default LineTitle

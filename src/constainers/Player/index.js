@@ -170,7 +170,6 @@ class Player extends Component {
     }
 
     loadMoreEvent = () => {
-        console.log((document.documentElement.scrollTop + 50) + ' ' + (document.documentElement.scrollHeight - document.documentElement.clientHeight))
         if (document.documentElement.scrollTop + 50 >=
             document.documentElement.scrollHeight - document.documentElement.clientHeight) {
             this.requestUserList()
