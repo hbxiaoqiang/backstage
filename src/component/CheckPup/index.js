@@ -1,6 +1,6 @@
 import React , { Component } from 'react';
 import { CheckStyle } from './style';
-import { MaskStyle } from '../../../../component/CommonStyle';
+import { MaskStyle } from '../CommonStyle';
 class CheckPup extends Component {
     render(){
         return(
@@ -21,12 +21,18 @@ class CheckPup extends Component {
                             this.props.nickname
                         }
                     </p>
-                    <p className='gold'>
+                    {
+                        this.props.gold?
+                        (
+                            <p className='gold'>
                         <span>当前房卡：</span>
                         {
                             this.props.gold
                         }
                     </p>
+                        ):null
+                    }
+                    
                 </div>
             </CheckStyle>
         )

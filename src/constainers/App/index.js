@@ -15,10 +15,12 @@ import Packet from '../Packet';
 import Password from '../Password';
 import AdminCash from '../AdminCash';
 import Consume from '../Consume';
+import RecordCost from '../RecordCost';
 import Loading from '../../component/Loading';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Toptips, Dialog } from 'react-weui';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import PrivateRoute from '../PrivateRoute';
 
 const ANIMATION_MAP = {
     PUSH: 'forward',
@@ -39,19 +41,20 @@ const outRouter = props => {
                 timeout={500}
             >
                 <Switch location={props.location}>
-                    <Route path='/home' component={Home} />
-                    <Route path='/player' component={Player} />
-                    <Route path='/gold' component={Gold} />
-                    <Route path='/notice' component={Notice} />
-                    <Route path='/group' component={Group} />
-                    <Route path='/bindMobile' component={BindMobile} />
-                    <Route path='/gameDetail' component={GameDetail} />
-                    <Route path='/gameRecord' component={GameRecord} />
-                    <Route path='/gather' component={Gather} />
-                    <Route path='/packet' component={Packet} />
-                    <Route path='/password' component={Password} />
-                    <Route path='/adminCash' component={AdminCash} />
-                    <Route path='/consume/:consume' component={Consume} />
+                    <PrivateRoute path='/home' component={Home} />
+                    <PrivateRoute path='/player' component={Player} />
+                    <PrivateRoute path='/gold' component={Gold} />
+                    <PrivateRoute path='/notice' component={Notice} />
+                    <PrivateRoute path='/group' component={Group} />
+                    <PrivateRoute path='/bindMobile' component={BindMobile} />
+                    <PrivateRoute path='/gameDetail' component={GameDetail} />
+                    <PrivateRoute path='/gameRecord' component={GameRecord} />
+                    <PrivateRoute path='/gather' component={Gather} />
+                    <PrivateRoute path='/packet' component={Packet} />
+                    <PrivateRoute path='/password' component={Password} />
+                    <PrivateRoute path='/adminCash' component={AdminCash} />
+                    <PrivateRoute path='/consume/:type' component={Consume} />
+                    <PrivateRoute path='/RecordCost/:type' component={RecordCost} />
                 </Switch>
 
             </CSSTransition>

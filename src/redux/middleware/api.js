@@ -58,7 +58,6 @@ export default store => next => action=> {
         
 
         if(typeof otherData !== 'undefined') Object.assign(nextData,{otherData});
-
         next(nextData)
 
         next({

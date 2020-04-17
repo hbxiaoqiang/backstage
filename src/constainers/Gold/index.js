@@ -5,7 +5,7 @@ import Header from '../../component/Header';
 import GoldHeader from './component/Header';
 import Tab from './component/Tab';
 import From from './component/Form';
-import CheckPup from './component/CheckPup';
+import CheckPup from '../../component/CheckPup';
 import { selecter,actions } from '../../redux/modules/gold';
 import { getUserInfo,actions as appAction } from '../../redux/modules/app';
 import config from '../../config';

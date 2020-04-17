@@ -25,6 +25,10 @@ export const user_List = data => parame('User/List',data);
 
 export const user_UpdateFortune = data => parame('User/UpdateFortune',data);
 
+export const user_UpdateMobile = data => parame('User/UpdateMobile',data);
+
+export const user_UpdatePassword = data => parame('User/UpdatePassword',data);
+
 export const user_Delete = data => parame('User/Delete',data);
 
 export const user_Giving = data => parame('User/Giving',data);

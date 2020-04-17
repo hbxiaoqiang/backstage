@@ -14,17 +14,17 @@ class Tab extends Component {
                         </div>
                     </FlexItem>
                     <FlexItem>
-                        <Link to='/goldRecord' className='tab'>
+                        <Link to='/RecordCost/record' className='tab'>
                             房卡记录
                         </Link>
                     </FlexItem>
                     <FlexItem>
-                        <Link to='/consume'  className='tab'>
+                        <Link to='/RecordCost/give'  className='tab'>
                             赠送记录
                         </Link>
                     </FlexItem>
                     <FlexItem>
-                        <Link to='/consume'  className='tab'>
+                        <Link to='/RecordCost/recharge'  className='tab'>
                             充值记录
                         </Link>
                     </FlexItem>

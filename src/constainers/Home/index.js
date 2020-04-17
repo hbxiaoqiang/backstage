@@ -11,7 +11,9 @@ class Home extends Component {
         return (
             <div>
                 {
-                    this.props.hall ? <Hall /> : null
+                    this.props.hall ? <Hall 
+                    history={this.props.history}
+                    /> : null
                 }
                 {
                     this.props.count ? <Count /> : null

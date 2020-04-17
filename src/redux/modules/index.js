@@ -14,6 +14,7 @@ import game from './game';
 import gather from './gather';
 import password from './password';
 import consume from './consume';
+import recordCost from './recordCost';
 
 //import entities from './entities';
 
@@ -32,7 +33,8 @@ const rootReducer = combineReducers({
     game,
     gather,
     password,
-    consume
+    consume,
+    recordCost
 })
 
 export default rootReducer;
