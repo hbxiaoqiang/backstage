@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { getCommon, actions as appActions } from '../../redux/modules/app';
 import Login from '../Login';
@@ -21,6 +21,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Toptips, Dialog } from 'react-weui';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import PrivateRoute from '../PrivateRoute';
+//import dynamicImport from '../../until/dynamicImport';
+
 
 const ANIMATION_MAP = {
     PUSH: 'forward',
@@ -100,35 +102,34 @@ const Confirm = (tip, sure, cancel) => {
     </Dialog>)
 }
 
-class App extends Component {
-    render() {
-        return <Fragment>
+function App(props) {
+    return (
+         <Fragment>
             <BrowserRouter>
                 <Route render={props => outRouter(props)}
                 />
             </BrowserRouter>
             {
-                this.props.common.loading ? (<Loading />) : null
+                props.common.loading ? (<Loading />) : null
             }
             {
-                this.props.common.topTips ? (
-                    <Toptips type="warn" show={true}>{this.props.common.topTips}</Toptips>
+                props.common.topTips ? (
+                    <Toptips type="warn" show={true}>{props.common.topTips}</Toptips>
                 ) : null
             }
             {
-                this.props.common.alert ?
-                    Alert(this.props.common.alert, this.props.clearAlert) : null
+                props.common.alert ?
+                    Alert(props.common.alert, props.clearAlert) : null
             }
             {
-                this.props.common.confirm.tip ?
-                    Confirm(this.props.common.confirm.tip,
-                        this.props.common.confirm.sureCall,
-                        this.props.clearConfirm) : null
+                props.common.confirm.tip ?
+                    Confirm(props.common.confirm.tip,
+                        props.common.confirm.sureCall,
+                        props.clearConfirm) : null
             }
 
         </Fragment>
-    }
-
+    )
 }
 
 const mapStateToProps = (state) => ({
