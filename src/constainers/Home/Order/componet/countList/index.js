@@ -1,4 +1,4 @@
-import React ,{ Component } from 'react';
+import React  from 'react';
 import { CountListStyle } from './style';
 import List from './list';
 import config from '../../../../../config';
@@ -11,29 +11,27 @@ const typeName = typeId =>{
     return config.userTypeName[typeId]
 }
 
-class CountList extends Component {
-    render(){
-        return (
-            <CountListStyle>
-                {
-                    this.props.counts.map((value,index)=>{
-                        return <List 
-                            key={index}
-                            url={headImgPath(value.UserId)}
-                            nickName={value.NickName}
-                            userId={value.UserId}
-                            typeName={typeName(value.TypeId)}
-                            gamerCount={value.GamerCount}
-                            recharge={value.Total}
-                            spreadName={value.SpreadName}
-                            gold={value.Gold}
-                            cost={value.Cost || 0 }
-                        />
-                    })
-                }
-            </CountListStyle>
-        )
-    }
+function CountList(props) {
+    return (
+        <CountListStyle>
+            {
+                props.counts.map((value,index)=>{
+                    return <List 
+                        key={index}
+                        url={headImgPath(value.UserId)}
+                        nickName={value.NickName}
+                        userId={value.UserId}
+                        typeName={typeName(value.TypeId)}
+                        gamerCount={value.GamerCount}
+                        recharge={value.Total}
+                        spreadName={value.SpreadName}
+                        gold={value.Gold}
+                        cost={value.Cost || 0 }
+                    />
+                })
+            }
+        </CountListStyle>
+    )
 }
 
 export default CountList
