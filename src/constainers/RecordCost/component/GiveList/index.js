@@ -35,7 +35,7 @@ class index extends Component {
                         this.props.datas.length ?
                             this.props.datas.map((value, index) => {
                                 return <List
-                                    key={value.index}
+                                    key={index}
                                     date={value.CreateTime.replace("T", " ").split(".")[0]}
                                     fromName={value.fromName}
                                     FromId={value.FromId}

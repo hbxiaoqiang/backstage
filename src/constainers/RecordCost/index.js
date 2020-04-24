@@ -49,12 +49,18 @@ const backParam = (type,sdt=getDateStr.getMothOnDay(),edt=getDateStr.CurDate()) 
 }
 
 class RecordCost extends Component {
+
+    constructor(props){
+        super(props)
+        this.type = this.props.match.params.types;
+    }
+    
     render() {
-        const type = this.props.match.params.type
+        
         return (
             <RecordCostStyle>
                 <Header 
-                 title = {`${titleName[type]}记录`}
+                 title = {`${titleName[this.type]}记录`}
                  backHandle={this.props.history.goBack}
                 />
                 {
@@ -66,7 +72,7 @@ class RecordCost extends Component {
                    ):null
                 }
                 {
-                    type === 'record'?
+                    this.type === 'record'?
                     (
                         <TotalList 
                         datas={ this.props.datas }
@@ -74,7 +80,7 @@ class RecordCost extends Component {
                     ):null
                 }
                 {
-                    type === 'give'||type === 'recharge'?
+                    this.type === 'give'||this.type === 'recharge'?
                     (
                         <GiveList 
                         datas={ this.props.datas }
@@ -88,7 +94,7 @@ class RecordCost extends Component {
 
 
     componentDidMount(){
-        Object.assign(param,backParam(this.props.match.params.type))
+        Object.assign(param,backParam(this.props.match.params.types))
         this.requestDatas();
         window.addEventListener('scroll', this.loadMoreEvent);
     }

@@ -55,8 +55,8 @@ const outRouter = props => {
                     <PrivateRoute path='/packet' component={Packet} />
                     <PrivateRoute path='/password' component={Password} />
                     <PrivateRoute path='/adminCash' component={AdminCash} />
-                    <PrivateRoute path='/consume/:type' component={Consume} />
-                    <PrivateRoute path='/RecordCost/:type' component={RecordCost} />
+                    <PrivateRoute path='/consume/:type/' component={Consume} />
+                    <PrivateRoute path='/recordCost/:types/' component={RecordCost} />
                 </Switch>
 
             </CSSTransition>
